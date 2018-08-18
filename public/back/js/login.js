@@ -71,4 +71,5 @@ $(function(){
   $('[type=reset]').click(function(){
     formObject.resetForm();
   })
+
 })
