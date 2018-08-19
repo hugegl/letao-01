@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/common.css">
   <title>Document</title>
 </head>
@@ -44,8 +46,38 @@
               <li class="active">一级分类</li>
             </ol>
       </div>
+      <!-- 一级分类内容 -->
+  <div class="first-content">
+    <!-- 添加按钮 -->
+    <div class="ml-50">
+        <button class="addfirst">添加分类</button>
+    </div>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th width="30%">序号</th>
+            <th>一级分类名</th>
+          </tr>
+        </thead>
+        <tbody class="firsttbody">
+          <!-- 模板引擎渲染 -->
+          <!-- <tr>
+              <td>测试</td>
+              <td>测试</td>
+              <td>测试</td>
+              <td>测试</td>
+              <td>测试</td>
+            </tr> -->
+        </tbody>
+      </table>
+      <!-- 分页器 -->
+      <div class="pull-right mr-50">
+        <ul class="paginator">
+        </ul>
+      </div>
   </div>
-  <!-- 模态框 -->
+  </div>
+  <!-- 退出模态框 -->
   <div>
       <div class="modal fade" tabindex="-1" role="dialog"  id="lt-modal">
           <div class="modal-dialog modal-sm" role="document">
@@ -65,9 +97,45 @@
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
   </div>
+  <!-- 添加分类模态框 -->
+  <div>
+      <div class="modal fade" tabindex="-1" role="dialog"  id="first-modal">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+              </div>
+              <form class="form-horizontal" id="addform" method="POST">
+                <div class="modal-body lt-modal-body red">
+                  <div class="form-group">
+                      <input name="categoryName" type="text" class="form-control" placeholder="请输入一级分类名">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-primary submit-first">添加</button>
+                </div>
+              </form>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+  </div>
 </body>
 <script src="./lib/jQuery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/first.js"></script>
+<script type="text/html" id="firsttbody">
+  {{each rows v i}}
+  <tr>
+    <td>{{i+1+(page-1)*size}}</td>
+    <td>{{v.categoryName}}</td>
+  </tr>
+  {{/each}}
+</script>
 </html>

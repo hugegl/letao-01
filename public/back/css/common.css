@@ -14,6 +14,9 @@ ul,li{
 .mr-50{
   margin-right:50px;
 }
+.ml-50{
+  margin-left:50px;
+}
 /* login 部分 */
 .bd-bg{
   height: 100%;
