@@ -108,10 +108,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">温馨提示</h4>
               </div>
-              <form class="form-horizontal" id="addform" method="POST">
+              <form id="addform" method="POST">
                 <div class="modal-body lt-modal-body red">
-                  <div class="btn-group">
+                  <div class="btn-group form-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <input type="hidden" name="categoryId">
                       <span class="choosefirst">请选择一级分类</span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
@@ -119,14 +120,15 @@
                     </ul>
                   </div>
                   <div class="form-group">
-                      <input name="categoryName" type="text" class="form-control" placeholder="请输入一级分类名">
+                      <input  name="brandName" type="text" class="form-control" placeholder="请输入二级分类名">
                   </div>
                   <div class="form-group">
                     <label type="button" for="file" class="btn btn-default">上传图片</label>
-                      <input name="file" type="file" id="file" style="display: none;">
+                      <input name="pic1" type="file" id="file" style="display: none;" data-url="/category/addSecondCategoryPic" class="inputimg">
+                      <input type="text"  style="display: none;" name="brandLogo">
                   </div>
-                  <div> 
-                    <img src="./images/hh.jpg" alt="" width="200px">
+                  <div class="text-center"> 
+                    <img src="./images/default.jpg" alt="" width="200px" class="secondsrc">
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -145,6 +147,8 @@
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/second.js"></script>
 <script type="text/html" id="secondtbody">
@@ -159,7 +163,7 @@
 </script>
 <script type="text/html"  id="second-lis">
   {{each rows v i}}
-   <li><a href="#">{{v.categoryName}}</a></li>
+   <li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
    {{/each}}
 </script>
 </html>
