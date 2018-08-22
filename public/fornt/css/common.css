@@ -1,0 +1,153 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img{
+  width: 100%;
+  display: block;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+/* 主体容器 */
+.ltm-content{
+  width: 100%;
+  height: 100%;
+  max-width:640px;
+  min-width: 320px;
+  padding-top:45px;
+  padding-bottom:45px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 公共头部 */
+.ltm-header{
+  width: 100%;
+  height: 45px;
+  background-color: #006699;
+  position: absolute;
+  top: 0;
+  left:0;
+  padding-left:45px;
+  padding-right:45px;
+  color:#fff;
+  font-size: 20px;
+  text-align: center;
+}
+.ltm-header .icon-left,
+.ltm-header .icon-right{
+  position: absolute;
+  top:0;
+  left:5px;
+}
+.ltm-header .icon-right{
+  left:auto;
+  right:5px;
+}
+.ltm-header a{
+  height:45px;
+  width:45px;
+  color:#fff;
+  display: block;
+  line-height: 45px;
+  text-align: center;
+}
+.ltm-header h3{
+  padding: 0;
+  margin: 0;
+  height:45px;
+  line-height: 45px;
+  font-weight: normal;
+}
+/* 公共底部 */
+.ltm-footer{
+  width: 100%;
+  height: 55px;
+  background-color: #006699;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  text-align: center;
+  padding-top:8px;
+  z-index: 9;
+}
+.ltm-footer li{
+  float:left;
+  width:25%;
+}
+.ltm-footer li a p{
+  color:#fff;
+}
+.ltm-footer li a.current p{
+  color:orange;
+}
+
+.ltm-info{
+  width: 100%;
+  height: 100%; 
+  position: relative;
+  background-color: #fff;
+}
+/* 搜索公共头部 */
+.ltm-search{
+  padding: 10px; 
+  position: relative; 
+}
+.ltm-search .search-input{
+  border:2px solid #007AFF;
+  border-radius:5px;
+  margin: 0;
+  padding: 0 45px 0 0 ;
+  height: 34px;
+  text-indent: 1em;
+}
+.ltm-search .search-btn{
+  border-radius:0 5px 5px 0 ;
+  position: absolute;
+  top:10px;
+  right:10px;
+}
+/* 产品公共部分 */
+.ltm-products {
+  margin-top:10px;
+  
+}
+.ltm-products ul{
+  padding-right:10px;
+  padding-left:10px;
+}
+.ltm-products li{
+  width:48%;
+  border:1px solid #ccc;
+  padding:10px;
+  text-align: center;
+  float: left;
+  margin-bottom:10px;
+  height:300px;
+}
+.ltm-products a{
+  display: block;
+}
+.ltm-products li:nth-of-type(odd){
+  margin-right:4%;
+}
+.ltm-products img{
+  width: 150px;
+  height: 150px;
+  margin:5px auto;
+}
+.ltm-products p{
+  margin: 8px 0;
+  text-align: center;
+}
+.ltm-products span:first-of-type{
+  color:red;
+  font-size:20px;
+}

@@ -1,0 +1,14 @@
+.searchList li{
+  float: left;
+  width: 25%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.searchList a{
+  color:#666;
+  display: block;
+}
+.searchList a.current{
+  color:orange;
+}

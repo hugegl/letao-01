@@ -1,0 +1,12 @@
+.ltm-body{
+  padding:10px;
+}
+/* 导航 */
+.top-navs{
+  width: 100%;
+  height: 100%;
+}
+.top-navs li{
+  float: left;
+  width:33.3%;
+}

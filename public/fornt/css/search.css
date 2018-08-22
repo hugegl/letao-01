@@ -1,0 +1,25 @@
+.search-list{
+  padding:10px;
+}
+.search-list .search-list-tittle{
+  height:50px;
+  line-height: 50px;
+}
+.search-list ul{
+  border:1px dashed red;
+}
+.search-list ul li{
+  border-bottom:1px dashed red;
+  height:50px;
+  line-height: 50px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.search-list ul li:last-of-type{
+  border-bottom:none;
+}
+.search-list ul li i{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
