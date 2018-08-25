@@ -18,27 +18,27 @@
         <a href="javascript:history.back();" class="icon-left"><span class="mui-icon mui-icon-back"></span></a>
         <h3>搜索中心</h3>
     </div>
-    <!-- 搜索中心主体 -->
-    <div class="ltm-search">
-      <div class="search-tittle">
-          <input type="text" placeholder="请输入搜索内容" class="search-input">
-          <button class="mui-btn mui-btn-primary search-btn">搜索</button>
-      </div>
-    </div>
-    <div class="searchList">
-        <ul class="mui-clearfix">
-          <li><a href="javascript:;">上架时间<i class="fa fa-angle-down"></i></a></li>
-          <li><a href="javascript:;" data-type="price">价格<i class="fa fa-angle-down"></i></a></li>
-          <li><a href="javascript:;" data-type="num">库存<i class="fa fa-angle-down"></i></a></li>
-          <li><a href="javascript:;">折扣<i class="fa fa-angle-down"></i></a></li>
-        </ul>
-    </div>
     <div class="ltm-info">
         <div class="mui-scroll-wrapper">
           <div class="mui-scroll">
-            <div  class="ltm-products">
+            <!-- 搜索中心主体 -->
+              <div class="ltm-search">
+                <div class="search-tittle">
+                  <input type="text" placeholder="请输入搜索内容" class="search-input">
+                  <button class="mui-btn mui-btn-primary search-btn">搜索</button>
+                </div>
+              </div>
+              <div class="searchList">
+                <ul class="mui-clearfix">
+                  <li><a href="javascript:;">上架时间<i class="fa fa-angle-down"></i></a></li>
+                  <li><a href="javascript:;" data-type="price">价格<i class="fa fa-angle-down"></i></a></li>
+                  <li><a href="javascript:;" data-type="num">库存<i class="fa fa-angle-down"></i></a></li>
+                  <li><a href="javascript:;">折扣<i class="fa fa-angle-down"></i></a></li>
+                </ul>
+              </div>
+               <div  class="ltm-products">
                 <!-- 动态渲染 -->
-
+                <!-- <div class="loading"></div> -->
              </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/searchList.js"></script>
+<script src="./js/searchList-addupanddown.js"></script>
 <script type="text/html" id="result-list">
   <ul class="ltm-product-item mui-clearfix">
     {{ each data v i}}
@@ -90,7 +90,7 @@
                 <span>&yen;{{v.oldPrice}}</span>
                 <span>&yen;{{v.price}}</span>
               </p>
-              <button class="mui-btn mui-btn-primary">立即购买</button>
+              <button class="mui-btn mui-btn-primary buy" data-id="{{v.id}}">立即购买</button>
           </a>
       </li>
       {{/each}}

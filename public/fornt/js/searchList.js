@@ -5,23 +5,28 @@ $(function () {
   render();
   //封装渲染函数,通过input框的值发送ajax数据,向后台拿结果,动态渲染;
   function render() {
+    $('.ltm-products').html(' <div class="loading"></div>')
     var dataObj = {};
-    dataObj.proName = $('.search-input').val();
+    dataObj.proName = $('.search-input').val().trim();
     dataObj.page = 1;
     dataObj.pageSize = 100;
-    var type = $('.searchList a.current').data('type');
-    var value = $('.searchList a.current').find('i').hasClass('fa-angle-down') ? 2 : 1;
-    dataObj[type] = value;
-    $.ajax({
-      url: '/product/queryProduct',
-      type: 'get',
-      data: dataObj,
-      dataType: 'json',
-      success: function (e) {
-        var str = template('result-list', e);
-        $('.ltm-products').html(str);
-      }
-    })
+    if( $('.searchList a.current').length>0){
+      var type = $('.searchList a.current').data('type');
+      var value = $('.searchList a.current').find('i').hasClass('fa-angle-down') ? 2 : 1;
+      dataObj[type] = value;
+    }
+    setTimeout(function(){
+      $.ajax({
+        url: '/product/queryProduct',
+        type: 'get',
+        data: dataObj,
+        dataType: 'json',
+        success: function (e) {
+          var str = template('result-list', e);
+          $('.ltm-products').html(str);
+        }
+      })
+    },500)
   }
   //注册点击事件动态获取结果页
   $('.search-btn').click(function () {
@@ -40,7 +45,7 @@ $(function () {
     localStorage.setItem('search-list',JSON.stringify(arr));
   })
   //排序
-  $('.searchList').on('click', 'a', function () {
+  $('.searchList').on('click', 'a[data-type]', function () {
     if ($(this).hasClass('current')) {
       $(this).find('i').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
     } else {

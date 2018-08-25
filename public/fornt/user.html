@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/user.css">
   <link rel="icon" href="./favicon.ico">
   <title>Document</title>
 </head>
@@ -14,10 +15,32 @@
   <div class="ltm-content">
     <!-- 公共头部 -->
     <div class="ltm-header">
-        <a href="index.html" class="icon-left"><span class="fa fa-home"></span></a>
-        <h3>乐淘云购</h3>
-        <a href="search.html" class="icon-right"><span class="fa fa-search"></span></a>
+      <div class="ltm-header">
+        <a href="javascript:history.back();" class="icon-left"><span class="mui-icon mui-icon-back"></span></a>
+        <h3>会员中心</h3>
     </div>
+    </div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media">
+            <a href="javascript:;" class="users">
+               <!-- 动态渲染坑 -->
+            </a>
+           </li>
+      <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">账号与安全</a>
+      </li>
+      <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">我的购物车</a>
+      </li>
+      <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">收货地址管理</a>
+      </li>
+    </ul>
+   <div class="logout">
+      <button>退出</button>
+   </div>
+
+
     <!-- 公共底部 -->
     <div  class="ltm-footer ltm-navs">
         <ul class="mui-clearfix">
@@ -51,5 +74,13 @@
 </body>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/user.js"></script>
+<script type="text/html" id="users">
+   <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+    <div class="mui-media-body">
+        {{username}}
+        <p class='mui-ellipsis'>{{mobile}}</p>
+    </div>
+</script>
 </html>

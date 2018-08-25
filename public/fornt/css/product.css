@@ -1,0 +1,21 @@
+.ltm-content .price{
+  color: red;
+}
+.ltm-content .old-price{
+  text-decoration: line-through;
+  color:#666;
+  font-size: 12px;
+}
+
+.ltm-content .num .last-num{
+  font-size: 12px;
+  color:#666;
+}
+.product-footer{
+  width:100%;
+  position: absolute;
+  bottom:0;
+  height:55px;
+  padding:10px;
+  line-height: 35px;
+}

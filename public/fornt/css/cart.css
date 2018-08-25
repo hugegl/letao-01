@@ -1,0 +1,24 @@
+.ltm-cart-items{
+  display: block;
+  width:100%;
+  height: 90px;
+}
+.ltm-img{
+  float:left;
+  height: 90px;
+  width: 60px;
+}
+.ltm-desc{
+  overflow: hidden;
+  height:100%;
+  padding: 0 10px;
+}
+.desc{
+  color:#666;
+}
+.price{
+  color:red;
+}
+.old-price{
+  text-decoration: line-through;
+}

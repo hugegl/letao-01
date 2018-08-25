@@ -40,13 +40,21 @@ $(function(){
   $('.search-list').on('click','.btn-delete',function(){
     var index = $(this).data('index');
     var arr = getLocalArr();
-    arr.splice(index,1);
-    localStorage.setItem('search-list',JSON.stringify(arr));
-    renderli();
+    mui.confirm('温馨提示','你确认要删除该条记录吗',['取消','确认'],function(e){
+      if(e.index === 1){
+        arr.splice(index,1);
+        localStorage.setItem('search-list',JSON.stringify(arr));
+        renderli();
+      }
+    })
   })
   //删除全部事件
   $('.search-list').on('click','.btn-clear',function(){
-   localStorage.removeItem('search-list');
-   renderli();
+    mui.confirm('温馨提示','你确认要清空历史记录吗',['取消','确认'],function(e){
+      if(e.index === 1){
+        localStorage.removeItem('search-list');
+        renderli();
+      }
+    })
   })
 })
